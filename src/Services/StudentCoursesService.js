@@ -2,9 +2,6 @@ const {StudentCoursesRepo}=require("../repositories");
 
 class StudentCoursesService{
     async createStudentCourses(data){
-        if(!data.courseId || !data.studentId){
-            throw new Error("course id and student id are required");
-        }
         return await StudentCoursesRepo.createStudentCourses(data);
     }
     async readAllStudentCourses(){

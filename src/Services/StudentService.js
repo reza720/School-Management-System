@@ -2,9 +2,6 @@ const {StudentRepo}=require("../repositories");
 
 class StudentService{
     async createStudent(data){
-        if(!data.fullName || !data.email){
-            throw new Error("name and email are required");
-        }
         return await StudentRepo.createStudent(data);
     }
     async readAllStudents(){
@@ -26,5 +23,4 @@ class StudentService{
         return await StudentRepo.deleteStudent(id);
     }
 }
-
 module.exports= new StudentService();

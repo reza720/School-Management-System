@@ -2,9 +2,6 @@ const {CourseRepo}=require("../repositories");
 
 class CourseService{
     async createCourse(data){
-        if(!data.code || !data.name || !data.startDate || !data.endDate){
-            throw new Error("code, name, start date, and end date are required");
-        }
         return await CourseRepo.createCourse(data);
     }
     async readAllCourses(){

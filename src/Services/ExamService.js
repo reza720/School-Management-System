@@ -2,9 +2,6 @@ const {ExamRepo}=require("../repositories");
 
 class ExamService{
     async createExam(data){
-        if(!data.courseId || !data.date){
-            throw new Error("Course Id and date are required");
-        }
         return await ExamRepo.createExam(data);
     }
     async readAllExams(){

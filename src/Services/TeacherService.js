@@ -2,9 +2,6 @@ const {TeacherRepo}=require("../repositories");
 
 class TeacherService{
     async createTeacher(data){
-        if(!data.fullName || !data.email){
-            throw new Error("name and email are required");
-        }
         return await TeacherRepo.createTeacher(data);
     }
     async readAllTeachers(){

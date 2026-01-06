@@ -2,9 +2,6 @@ const {AttendanceRepo}=require("../repositories");
 
 class AttendanceService{
     async create(data){
-        if(!data.courseId || !data.studentId || !data.date){
-            throw new Error("course Id, student Id, and date are required");
-        }
         return await AttendanceRepo.createAttendance(data);
     }
     async readAllAttendance(){
