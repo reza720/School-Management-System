@@ -1,4 +1,4 @@
-const sequelize = require("../config/databbase");
+const sequelize = require("../config/database");
 const Teacher = require("./Teacher");
 const Student = require("./Student");
 const Course = require("./Course");
@@ -17,8 +17,8 @@ Attendance.belongsTo(Course, { foreignKey: "courseId" });
 Student.hasMany(Attendance, { foreignKey: "studentId" });
 Attendance.belongsTo(Student, { foreignKey: "studentId" });
 
-Student.belongsToMany(Course, { through: Student_Courses, foreignKey: "studentId" });
-Course.belongsToMany(Student, { through: Student_Courses, foreignKey: "courseId" });
+Student.belongsToMany(Course, { through: StudentCourses, foreignKey: "studentId" });
+Course.belongsToMany(Student, { through: StudentCourses, foreignKey: "courseId" });
 
 module.exports = {
     sequelize,

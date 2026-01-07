@@ -1,5 +1,5 @@
 const {DataTypes}=require("sequelize");
-const sequelize=require("../config/databbase");
+const sequelize=require("../config/database");
 
 const Exam=sequelize.define("Exam",{
     id:{type:DataTypes.INTEGER,autoIncrement:true, primaryKey:true},
